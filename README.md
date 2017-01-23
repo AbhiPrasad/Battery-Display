@@ -1,4 +1,4 @@
-# Battery Checker
+# Battery Display
 
 An [electron](http://electron.atom.io/) application that checks the state of your battery and auto updates when battery level changes. 
 
