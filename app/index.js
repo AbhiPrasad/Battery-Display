@@ -13,11 +13,11 @@ navigator.getBattery().then(function(battery) {
         widthLevel = Math.round(widthLevel);
         let leftLevel = -1 * (200 - widthLevel);
 
-        // document.getElementById("batt").style.width = widthLevel.toString() + "px";
-        // document.getElementById("batt").style.left = leftLevel.toString() + "px";
+        document.getElementById("batt").style.width = widthLevel.toString() + "px";
+        document.getElementById("batt").style.left = leftLevel.toString() + "px";
 
-        console.log(widthLevel.toString() + "px");
-        console.log(leftLevel.toString() + "px");
+        // console.log(widthLevel.toString() + "px");
+        // console.log(leftLevel.toString() + "px");
 
         document.getElementById("battext").innerText = battery.level * 100 + "%"
     }
