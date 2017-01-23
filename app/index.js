@@ -1,16 +1,51 @@
-var battery = navigator.getBattery();
+navigator.getBattery().then(function(battery) {
 
-if (battery) {
-    //battery API supported
+    function updateAllBatteryInfo() {
+        updateChargeInfo();
+        updateLevelInfo();
+        updateChargingInfo();
+        updateDischargingInfo();
+    }
 
-    console.log("battery level: ", Math.floor(battery.level * 100) + "%");
+    updateAllBatteryInfo();
 
-    console.log("device is ", (battery.charging ? "charging" : "discharging"));
+    battery.addEventListener('chargingchange', function() {
+        updateChargeInfo();
+    });
 
-    console.log("hello");
+    function updateChargeInfo() {
+        console.log("Battery charging? " +
+            (battery.charging ? "Yes" : "No"));
+    }
 
-    document.getElementById('bat1').innerText = "hello";
-}
+    battery.addEventListener('levelchange', function() {
+        updateLevelInfo();
+    });
+
+    function updateLevelInfo() {
+        console.log("Battery level: " +
+            battery.level * 100 + "%");
+    }
+
+    battery.addEventListener('chargingtimechange', function() {
+        updateChargingInfo();
+    });
+
+    function updateChargingInfo() {
+        console.log("Battery charging time: " +
+            battery.chargingTime + " seconds");
+    }
+
+    battery.addEventListener('dischargingtimechange', function() {
+        updateDischargingInfo();
+    });
+
+    function updateDischargingInfo() {
+        console.log("Battery discharging time: " +
+            battery.dischargingTime + " seconds");
+    }
+
+});
 
 console.log("hello");
 
