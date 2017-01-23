@@ -11,7 +11,7 @@ $ npm install -g electron
 
 clone the repo
 ```git
-$ git clone ~~~
+$ git clone https://github.com/AbhiPrasad/Battery-Display.git
 ```
 
 Run the application  in the directory
