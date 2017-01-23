@@ -8,9 +8,8 @@ navigator.getBattery().then(function(battery) {
 
     function updateLevelInfo() {
         //  console.log("Battery level: " + battery.level * 100 + "%");
-
-        let widthLevel = battery.level * 100 * 2;
-        widthLevel = Math.round(widthLevel);
+        let batLevel = Math.round(battery.level * 100);
+        let widthLevel = batLevel * 2;
         let leftLevel = -1 * (200 - widthLevel);
 
         document.getElementById("batt").style.width = widthLevel.toString() + "px";
@@ -19,6 +18,14 @@ navigator.getBattery().then(function(battery) {
         // console.log(widthLevel.toString() + "px");
         // console.log(leftLevel.toString() + "px");
 
-        document.getElementById("battext").innerText = battery.level * 100 + "%"
+        document.getElementById("battext").innerText = batLevel + "%"
+
+        if (batLevel <= 10) {
+            document.getElementById("batt").style.backgroundColor = "red";
+        } else if (batLevel <= 30) {
+            document.getElementById("batt").style.backgroundColor = "yellow";
+        } else {
+            document.getElementById("batt").style.backgroundColor = "green";
+        }
     }
 });
