@@ -25,6 +25,7 @@ navigator.getBattery().then(function(battery) {
     function updateLevelInfo() {
         console.log("Battery level: " +
             battery.level * 100 + "%");
+
     }
 
     battery.addEventListener('chargingtimechange', function() {
@@ -49,4 +50,4 @@ navigator.getBattery().then(function(battery) {
 
 console.log("hello");
 
-document.getElementById("OK").textContent = 'hello';
+document.getElementById("batt").style.width = "300px";

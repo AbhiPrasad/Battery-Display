@@ -194,3 +194,17 @@ table {
     top: 50%;
     width: 100%;
 }
+
+.center-logo {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.test:before {
+    content: "testing";
+    color: red;
+}
