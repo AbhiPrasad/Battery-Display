@@ -156,15 +156,18 @@ table {
     width: 10px;
 }
 
-.battery::after {
+.inbattery {
     background-color: green;
     content: "";
     display: block;
     height: 70px;
     position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100px;
+    left: -90px;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 110px;
+    margin: auto;
 }
 
 .center-div {
